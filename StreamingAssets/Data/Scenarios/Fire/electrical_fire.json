@@ -1,0 +1,68 @@
+﻿{
+  "scenario_id": "electrical_fire",
+  "module_id": "MOD_FIRE",
+  "title_key": "scenario_electrical_fire_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_scan_surface",
+      "hazard_active": false,
+      "allowed_actions": ["ACTION_SCAN_DONE"],
+      "next_state": "SCAN"
+    },
+    {
+      "state_id": "SCAN",
+      "instruction_key": "instruction_tap_to_place",
+      "hazard_active": false,
+      "allowed_actions": ["ACTION_ENVIRONMENT_PLACED"],
+      "next_state": "HAZARD_DETECTED"
+    },
+    {
+      "state_id": "HAZARD_DETECTED",
+      "instruction_key": "instruction_identify_fire_hazard",
+      "hazard_active": true,
+      "hazard_type": "ELECTRICAL_PANEL_FIRE",
+      "allowed_actions": ["ACTION_IDENTIFY_ELECTRICAL", "ACTION_IDENTIFY_WOOD_PAPER"],
+      "next_state": "SELECT_EXTINGUISHER"
+    },
+    {
+      "state_id": "SELECT_EXTINGUISHER",
+      "instruction_key": "instruction_choose_extinguisher",
+      "hazard_active": true,
+      "hazard_type": "ELECTRICAL_PANEL_FIRE",
+      "allowed_actions": ["SELECT_WATER_EXTINGUISHER", "SELECT_CO2_EXTINGUISHER", "SELECT_FOAM_EXTINGUISHER"],
+      "next_state": "EXTINGUISH"
+    },
+    {
+      "state_id": "EXTINGUISH",
+      "instruction_key": "instruction_aim_base_pass",
+      "hazard_active": true,
+      "hazard_type": "ELECTRICAL_PANEL_FIRE",
+      "allowed_actions": ["APPLY_PASS_METHOD"],
+      "next_state": "EVACUATION_REQUIRED"
+    },
+    {
+      "state_id": "EVACUATION_REQUIRED",
+      "instruction_key": "instruction_identify_exit",
+      "hazard_active": true,
+      "hazard_type": "ELECTRICAL_PANEL_FIRE",
+      "allowed_actions": ["LOCATE_EMERGENCY_EXIT"],
+      "next_state": "CALCULATE_ROUTE"
+    },
+    {
+      "state_id": "CALCULATE_ROUTE",
+      "instruction_key": "instruction_follow_ar_arrows",
+      "hazard_active": false,
+      "allowed_actions": ["FOLLOW_ASTAR_PATH"],
+      "next_state": "ASSEMBLY_POINT"
+    },
+    {
+      "state_id": "ASSEMBLY_POINT",
+      "instruction_key": "instruction_reach_safe_assembly",
+      "hazard_active": false,
+      "allowed_actions": ["CONFIRM_ASSEMBLY_REACHED"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

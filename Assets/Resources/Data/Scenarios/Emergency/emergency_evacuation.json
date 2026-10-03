@@ -1,0 +1,30 @@
+﻿{
+  "scenario_id": "emergency_evacuation",
+  "module_id": "MOD_EMERGENCY",
+  "title_key": "scenario_emergency_evac_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_emergency_scan",
+      "hazard_active": false,
+      "allowed_actions": ["SCAN_DONE"],
+      "next_state": "HAZARD_OUTBREAK"
+    },
+    {
+      "state_id": "HAZARD_OUTBREAK",
+      "instruction_key": "instruction_navigate_safe_path",
+      "hazard_active": true,
+      "hazard_type": "MINE_COLLAPSE_OBSTACLE",
+      "allowed_actions": ["FOLLOW_DYNAMIC_ASTAR_PATH"],
+      "next_state": "ASSEMBLY_POINT"
+    },
+    {
+      "state_id": "ASSEMBLY_POINT",
+      "instruction_key": "instruction_muster_station_arrival",
+      "hazard_active": false,
+      "allowed_actions": ["CHECK_IN_MUSTER_POINT"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+﻿{
+  "scenario_id": "ppe_safety",
+  "module_id": "MOD_PPE",
+  "title_key": "scenario_ppe_compliance_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_ppe_scan",
+      "hazard_active": false,
+      "allowed_actions": ["SCAN_DONE"],
+      "next_state": "HAZARD_ZONE_MICA"
+    },
+    {
+      "state_id": "HAZARD_ZONE_MICA",
+      "instruction_key": "instruction_select_mica_dust_ppe",
+      "hazard_active": true,
+      "hazard_type": "SILICA_MICA_PARTICULATES",
+      "allowed_actions": ["EQUIP_RESPIRATOR_AND_GOGGLES", "PROCEED_WITHOUT_PPE"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

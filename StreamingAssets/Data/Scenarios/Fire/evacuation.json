@@ -1,0 +1,38 @@
+﻿{
+  "scenario_id": "evacuation",
+  "module_id": "MOD_FIRE",
+  "title_key": "scenario_fire_evacuation_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_scan_surface",
+      "hazard_active": false,
+      "allowed_actions": ["ACTION_SCAN_DONE"],
+      "next_state": "EMERGENCY_ALARM"
+    },
+    {
+      "state_id": "EMERGENCY_ALARM",
+      "instruction_key": "instruction_sound_alarm_initiate",
+      "hazard_active": true,
+      "hazard_type": "STRUCTURAL_FIRE",
+      "allowed_actions": ["SOUND_FIRE_ALARM"],
+      "next_state": "AVOID_SMOKE_PATH"
+    },
+    {
+      "state_id": "AVOID_SMOKE_PATH",
+      "instruction_key": "instruction_crouch_low_under_smoke",
+      "hazard_active": true,
+      "hazard_type": "STRUCTURAL_FIRE",
+      "allowed_actions": ["CROUCH_UNDER_SMOKE", "RUN_UPRIGHT"],
+      "next_state": "ASSEMBLY_POINT"
+    },
+    {
+      "state_id": "ASSEMBLY_POINT",
+      "instruction_key": "instruction_headcount_at_assembly",
+      "hazard_active": false,
+      "allowed_actions": ["REPORT_HEADCOUNT"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

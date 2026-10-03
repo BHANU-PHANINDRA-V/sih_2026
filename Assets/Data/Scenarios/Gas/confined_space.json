@@ -1,0 +1,38 @@
+﻿{
+  "scenario_id": "confined_space",
+  "module_id": "MOD_GAS",
+  "title_key": "scenario_confined_space_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_confined_space_scan",
+      "hazard_active": false,
+      "allowed_actions": ["SCAN_COMPLETED"],
+      "next_state": "PERMIT_CHECK"
+    },
+    {
+      "state_id": "PERMIT_CHECK",
+      "instruction_key": "instruction_verify_entry_permit",
+      "hazard_active": true,
+      "hazard_type": "OXYGEN_DEFICIENCY",
+      "allowed_actions": ["VERIFY_CONFINED_PERMIT", "ENTER_WITHOUT_PERMIT"],
+      "next_state": "STANDBY_OBSERVER"
+    },
+    {
+      "state_id": "STANDBY_OBSERVER",
+      "instruction_key": "instruction_appoint_standby_observer",
+      "hazard_active": true,
+      "hazard_type": "OXYGEN_DEFICIENCY",
+      "allowed_actions": ["ASSIGN_SAFETY_WATCHMAN"],
+      "next_state": "VENTILATION_CHECK"
+    },
+    {
+      "state_id": "VENTILATION_CHECK",
+      "instruction_key": "instruction_forced_air_ventilation",
+      "hazard_active": false,
+      "allowed_actions": ["OPERATE_AIR_BLOWER"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

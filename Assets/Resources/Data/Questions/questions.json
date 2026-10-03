@@ -1,0 +1,54 @@
+﻿[
+  {
+    "question_id": "Q_FIRE_01",
+    "module_id": "MOD_FIRE",
+    "question_key": "q_fire_class_c",
+    "options_keys": [
+      "opt_fire_water",
+      "opt_fire_co2_dry_powder",
+      "opt_fire_kerosene",
+      "opt_fire_wet_chemical"
+    ],
+    "correct_option_index": 1,
+    "points": 15
+  },
+  {
+    "question_id": "Q_FIRE_02",
+    "module_id": "MOD_FIRE",
+    "question_key": "q_fire_pass_meaning",
+    "options_keys": [
+      "opt_pass_pull_aim_squeeze_sweep",
+      "opt_pass_push_air_stop_shake",
+      "opt_pass_point_arm_strike_shout",
+      "opt_pass_press_alert_secure_stay"
+    ],
+    "correct_option_index": 0,
+    "points": 15
+  },
+  {
+    "question_id": "Q_GAS_01",
+    "module_id": "MOD_GAS",
+    "question_key": "q_gas_confined_entry",
+    "options_keys": [
+      "opt_gas_enter_alone",
+      "opt_gas_test_oxygen_permit_standby",
+      "opt_gas_light_match_test",
+      "opt_gas_spray_water_before_entry"
+    ],
+    "correct_option_index": 1,
+    "points": 15
+  },
+  {
+    "question_id": "Q_MACH_01",
+    "module_id": "MOD_MACHINERY",
+    "question_key": "q_mach_loto_purpose",
+    "options_keys": [
+      "opt_mach_speed_up_machine",
+      "opt_mach_zero_energy_state_prevent_start",
+      "opt_mach_clean_paint",
+      "opt_mach_bypass_fuse"
+    ],
+    "correct_option_index": 1,
+    "points": 15
+  }
+]

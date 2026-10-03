@@ -1,0 +1,47 @@
+﻿[
+  {
+    "id": "MOD_FIRE",
+    "order": 1,
+    "title_key": "mod_fire_title",
+    "desc_key": "mod_fire_desc",
+    "sector": "Mining, Steel, Mica",
+    "scenarios": ["electrical_fire", "evacuation"],
+    "icon_resource": "Icons/FireIcon"
+  },
+  {
+    "id": "MOD_GAS",
+    "order": 2,
+    "title_key": "mod_gas_title",
+    "desc_key": "mod_gas_desc",
+    "sector": "Mining, Confined Spaces",
+    "scenarios": ["gas_leak", "confined_space"],
+    "icon_resource": "Icons/GasIcon"
+  },
+  {
+    "id": "MOD_MACHINERY",
+    "order": 3,
+    "title_key": "mod_machinery_title",
+    "desc_key": "mod_machinery_desc",
+    "sector": "Steel, Conveyors, Dumpers",
+    "scenarios": ["machinery_safety"],
+    "icon_resource": "Icons/MachineryIcon"
+  },
+  {
+    "id": "MOD_PPE",
+    "order": 4,
+    "title_key": "mod_ppe_title",
+    "desc_key": "mod_ppe_desc",
+    "sector": "All Industrial",
+    "scenarios": ["ppe_safety"],
+    "icon_resource": "Icons/PPEIcon"
+  },
+  {
+    "id": "MOD_EMERGENCY",
+    "order": 5,
+    "title_key": "mod_emergency_title",
+    "desc_key": "mod_emergency_desc",
+    "sector": "All Industrial",
+    "scenarios": ["emergency_evacuation"],
+    "icon_resource": "Icons/EmergencyIcon"
+  }
+]

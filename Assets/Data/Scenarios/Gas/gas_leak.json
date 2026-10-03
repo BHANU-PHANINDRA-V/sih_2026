@@ -1,0 +1,62 @@
+﻿{
+  "scenario_id": "gas_leak",
+  "module_id": "MOD_GAS",
+  "title_key": "scenario_gas_leak_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_gas_scan_surface",
+      "hazard_active": false,
+      "allowed_actions": ["ACTION_ENVIRONMENT_PLACED"],
+      "next_state": "GAS_HAZARD"
+    },
+    {
+      "state_id": "GAS_HAZARD",
+      "instruction_key": "instruction_detect_gas_cloud",
+      "hazard_active": true,
+      "hazard_type": "TOXIC_METHANE_H2S",
+      "allowed_actions": ["IDENTIFY_GAS_CLOUD"],
+      "next_state": "DANGER_ZONE"
+    },
+    {
+      "state_id": "DANGER_ZONE",
+      "instruction_key": "instruction_stay_upwind",
+      "hazard_active": true,
+      "hazard_type": "TOXIC_METHANE_H2S",
+      "allowed_actions": ["STEP_BACK_UPWIND", "STEP_INTO_CLOUD"],
+      "next_state": "SELECT_PPE"
+    },
+    {
+      "state_id": "SELECT_PPE",
+      "instruction_key": "instruction_select_respiratory_ppe",
+      "hazard_active": true,
+      "hazard_type": "TOXIC_METHANE_H2S",
+      "allowed_actions": ["EQUIP_SCBA", "EQUIP_DUST_MASK", "NO_RESPIRATOR"],
+      "next_state": "GAS_CHECK"
+    },
+    {
+      "state_id": "GAS_CHECK",
+      "instruction_key": "instruction_multi_gas_detector",
+      "hazard_active": true,
+      "hazard_type": "TOXIC_METHANE_H2S",
+      "allowed_actions": ["USE_MULTI_GAS_DETECTOR", "SMELL_AIR_DIRECTLY"],
+      "next_state": "ENTRY_DECISION"
+    },
+    {
+      "state_id": "ENTRY_DECISION",
+      "instruction_key": "instruction_entry_permit_decision",
+      "hazard_active": true,
+      "hazard_type": "TOXIC_METHANE_H2S",
+      "allowed_actions": ["ABORT_AND_SOUND_ALARM", "FORCE_UNSAFE_ENTRY"],
+      "next_state": "EVACUATE"
+    },
+    {
+      "state_id": "EVACUATE",
+      "instruction_key": "instruction_evacuate_upwind_assembly",
+      "hazard_active": false,
+      "allowed_actions": ["REACH_UPWIND_ASSEMBLY"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿{
+  "pass_threshold": 70,
+  "certificate_prefix": "TK",
+  "allow_retry": true,
+  "generate_qr": true,
+  "allow_export": true,
+  "organization_name": "TRINETRA VOCATIONAL SAFETY COUNCIL",
+  "qr_payload_format": "TRINETRA_KAVACH|{CERT_ID}|{VERIFY_CODE}|{SCORE}|{DATE}"
+}

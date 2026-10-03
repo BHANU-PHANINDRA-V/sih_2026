@@ -1,0 +1,92 @@
+﻿[
+  {
+    "rule_id": "RULE_FIRE_WATER_ON_ELEC",
+    "module_id": "MOD_FIRE",
+    "action": "SELECT_WATER_EXTINGUISHER",
+    "context": "ELECTRICAL_PANEL_FIRE",
+    "is_correct": false,
+    "score_change": -25,
+    "risk_level": "CRITICAL",
+    "feedback_key": "feedback_water_on_electrical_hazard"
+  },
+  {
+    "rule_id": "RULE_FIRE_CO2_ON_ELEC",
+    "module_id": "MOD_FIRE",
+    "action": "SELECT_CO2_EXTINGUISHER",
+    "context": "ELECTRICAL_PANEL_FIRE",
+    "is_correct": true,
+    "score_change": 20,
+    "risk_level": "SAFE",
+    "feedback_key": "feedback_co2_correct_choice"
+  },
+  {
+    "rule_id": "RULE_FIRE_PASS_AIM",
+    "module_id": "MOD_FIRE",
+    "action": "APPLY_PASS_METHOD",
+    "context": "ELECTRICAL_PANEL_FIRE",
+    "is_correct": true,
+    "score_change": 15,
+    "risk_level": "SAFE",
+    "feedback_key": "feedback_pass_technique_correct"
+  },
+  {
+    "rule_id": "RULE_GAS_DUST_MASK",
+    "module_id": "MOD_GAS",
+    "action": "EQUIP_DUST_MASK",
+    "context": "TOXIC_METHANE_H2S",
+    "is_correct": false,
+    "score_change": -30,
+    "risk_level": "FATAL",
+    "feedback_key": "feedback_dust_mask_inadequate_for_gas"
+  },
+  {
+    "rule_id": "RULE_GAS_SCBA_CORRECT",
+    "module_id": "MOD_GAS",
+    "action": "EQUIP_SCBA",
+    "context": "TOXIC_METHANE_H2S",
+    "is_correct": true,
+    "score_change": 20,
+    "risk_level": "SAFE",
+    "feedback_key": "feedback_scba_correct_choice"
+  },
+  {
+    "rule_id": "RULE_GAS_FORCE_ENTRY",
+    "module_id": "MOD_GAS",
+    "action": "FORCE_UNSAFE_ENTRY",
+    "context": "TOXIC_METHANE_H2S",
+    "is_correct": false,
+    "score_change": -40,
+    "risk_level": "FATAL",
+    "feedback_key": "feedback_unsafe_entry_without_clearance"
+  },
+  {
+    "rule_id": "RULE_GAS_ABORT_ALARM",
+    "module_id": "MOD_GAS",
+    "action": "ABORT_AND_SOUND_ALARM",
+    "context": "TOXIC_METHANE_H2S",
+    "is_correct": true,
+    "score_change": 25,
+    "risk_level": "SAFE",
+    "feedback_key": "feedback_abort_alarm_correct"
+  },
+  {
+    "rule_id": "RULE_MACH_LOTO_SEQUENCE",
+    "module_id": "MOD_MACHINERY",
+    "action": "APPLY_LOCKOUT_TAGOUT",
+    "context": "CONVEYOR_MAINTENANCE",
+    "is_correct": true,
+    "score_change": 20,
+    "risk_level": "SAFE",
+    "feedback_key": "feedback_loto_applied_safely"
+  },
+  {
+    "rule_id": "RULE_MACH_START_WITHOUT_LOTO",
+    "module_id": "MOD_MACHINERY",
+    "action": "COMMENCE_WORK_WITHOUT_LOTO",
+    "context": "CONVEYOR_MAINTENANCE",
+    "is_correct": false,
+    "score_change": -35,
+    "risk_level": "CRITICAL",
+    "feedback_key": "feedback_work_without_loto_violation"
+  }
+]

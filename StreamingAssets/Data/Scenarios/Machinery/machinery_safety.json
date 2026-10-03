@@ -1,0 +1,60 @@
+﻿{
+  "scenario_id": "machinery_safety",
+  "module_id": "MOD_MACHINERY",
+  "title_key": "scenario_machinery_loto_title",
+  "initial_state": "INTRO",
+  "states": [
+    {
+      "state_id": "INTRO",
+      "instruction_key": "instruction_machinery_scan",
+      "hazard_active": false,
+      "allowed_actions": ["SCAN_DONE"],
+      "next_state": "MACHINE_STOP"
+    },
+    {
+      "state_id": "MACHINE_STOP",
+      "instruction_key": "instruction_press_emergency_stop",
+      "hazard_active": true,
+      "hazard_type": "PINCH_ROTATING_PARTS",
+      "allowed_actions": ["PRESS_E_STOP"],
+      "next_state": "ISOLATION_REQUIRED"
+    },
+    {
+      "state_id": "ISOLATION_REQUIRED",
+      "instruction_key": "instruction_open_breaker_switch",
+      "hazard_active": true,
+      "hazard_type": "HIGH_VOLTAGE_ROTARY",
+      "allowed_actions": ["OPEN_ISOLATION_SWITCH"],
+      "next_state": "LOCK_APPLIED"
+    },
+    {
+      "state_id": "LOCK_APPLIED",
+      "instruction_key": "instruction_affix_padlock",
+      "hazard_active": true,
+      "hazard_type": "STORED_ENERGY",
+      "allowed_actions": ["AFFIX_SAFETY_PADLOCK"],
+      "next_state": "TAG_APPLIED"
+    },
+    {
+      "state_id": "TAG_APPLIED",
+      "instruction_key": "instruction_fill_danger_tag",
+      "hazard_active": false,
+      "allowed_actions": ["ATTACH_DANGER_TAG"],
+      "next_state": "ENERGY_VERIFIED"
+    },
+    {
+      "state_id": "ENERGY_VERIFIED",
+      "instruction_key": "instruction_try_restart_zero_test",
+      "hazard_active": false,
+      "allowed_actions": ["TEST_ZERO_ENERGY_BUTTON"],
+      "next_state": "SAFE_TO_WORK"
+    },
+    {
+      "state_id": "SAFE_TO_WORK",
+      "instruction_key": "instruction_commence_safe_maintenance",
+      "hazard_active": false,
+      "allowed_actions": ["START_MAINTENANCE"],
+      "next_state": "ASSESSMENT"
+    }
+  ]
+}

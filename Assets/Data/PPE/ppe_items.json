@@ -1,0 +1,51 @@
+﻿[
+  {
+    "id": "PPE_HELMET",
+    "name_key": "ppe_helmet_name",
+    "category": "HEAD",
+    "protection_level": "CLASS_E_INDUSTRIAL",
+    "icon": "Icons/PPE_Helmet"
+  },
+  {
+    "id": "PPE_SCBA",
+    "name_key": "ppe_scba_name",
+    "category": "RESPIRATORY",
+    "protection_level": "POSITIVE_PRESSURE_OXYGEN",
+    "icon": "Icons/PPE_SCBA"
+  },
+  {
+    "id": "PPE_DUST_MASK",
+    "name_key": "ppe_dust_mask_name",
+    "category": "RESPIRATORY",
+    "protection_level": "N95_PARTICULATE_ONLY",
+    "icon": "Icons/PPE_Mask"
+  },
+  {
+    "id": "PPE_BOOTS",
+    "name_key": "ppe_boots_name",
+    "category": "FEET",
+    "protection_level": "STEEL_TOE_DIELECTRIC",
+    "icon": "Icons/PPE_Boots"
+  },
+  {
+    "id": "PPE_GLOVES",
+    "name_key": "ppe_gloves_name",
+    "category": "HANDS",
+    "protection_level": "HIGH_VOLTAGE_INSULATED",
+    "icon": "Icons/PPE_Gloves"
+  },
+  {
+    "id": "PPE_GOGGLES",
+    "name_key": "ppe_goggles_name",
+    "category": "EYE",
+    "protection_level": "CHEMICAL_IMPACT_RESISTANT",
+    "icon": "Icons/PPE_Goggles"
+  },
+  {
+    "id": "PPE_VEST",
+    "name_key": "ppe_vest_name",
+    "category": "BODY",
+    "protection_level": "HIGH_VISIBILITY_REFLECTIVE",
+    "icon": "Icons/PPE_Vest"
+  }
+]
